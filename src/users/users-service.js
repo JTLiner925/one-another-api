@@ -3,7 +3,8 @@ const UsersService = {
     return knex.select('*').from('one_another_users')
   },
 
-  insertUser(knex, newUser) {
+  addUser(knex, newUser) {
+    console.log(newUser)
     return knex
       .insert(newUser)
       .into('one_another_users')
@@ -13,11 +14,11 @@ const UsersService = {
       })
   },
 
-  getById(knex, id) {
+  getByEmail(knex, email) {
     return knex
       .from('one_another_users')
       .select('*')
-      .where('id', id)
+      .where('user_email', email)
       .first()
   },
 
