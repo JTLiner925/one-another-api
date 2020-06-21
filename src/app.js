@@ -19,9 +19,9 @@ app.use(helmet());
 // app.get('/api/*', (req, res) => {
 //   res.json({ok: true});
 // });
-app.use('/api/groups', groupsRouter)
-app.use('/api/users', usersRouter)
 
+app.use('/api/users', usersRouter)
+app.use('/api/groups', groupsRouter)
 app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
