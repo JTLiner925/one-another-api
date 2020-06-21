@@ -6,7 +6,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const { NODE_ENV } = require("./config");
 const usersRouter = require('./users/users-router.js');
-
+const groupsRouter = require('./groups/groups-router.js');
 const app = express();
 
 const morganOption = NODE_ENV === "production" ? "tiny" : "common";
@@ -19,7 +19,7 @@ app.use(helmet());
 // app.get('/api/*', (req, res) => {
 //   res.json({ok: true});
 // });
-
+app.use('/api/groups', groupsRouter)
 app.use('/api/users', usersRouter)
 
 app.get("/", (req, res) => {
