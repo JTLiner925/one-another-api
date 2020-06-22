@@ -28,10 +28,10 @@ const GroupsService = {
       .delete()
   },
 
-  updateGroup(knex, id, newUserFields) {
+  updateGroup(knex, id, newGroupFields) {
     return knex('one_another_groups')
       .where({ id })
-      .update(newUserFields)
+      .update(newGroupFields)
   },
 }
 
