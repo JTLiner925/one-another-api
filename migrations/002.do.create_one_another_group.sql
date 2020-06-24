@@ -7,5 +7,6 @@ CREATE TABLE one_another_groups (
     group_location TEXT NOT NULL,
     time_date TEXT NOT NULL,
     more_info TEXT,
+    user_ids TEXT[],
     UNIQUE (id)
 )
