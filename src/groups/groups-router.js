@@ -13,7 +13,7 @@ const serializeGroup = (group) => ({
   group_location: xss(group.group_location),
   time_date: xss(group.time_date),
   more_info: xss(group.more_info),
-  user_ids: group.user_ids
+  user_ids: group.user_ids,
 });
 
 groupsRouter.route("/").get((req, res, next) => {
@@ -39,15 +39,16 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
   let userId = req.userId;
   let groupData = {
     group_name,
+    id: userId,
     // pitch,
     // leader_phone,
     // group_location,
     // time_date,
     // more_info,
     // group_leader: userId,
-    user_ids: `{ ${userId} }`,
+    user_ids: `{${userId}}`  ,
   };
-  GroupsService.updateGroup(knexInstance, userId, groupData)
+  GroupsService.updateGroup(knexInstance, userId, groupData.user_ids)
     .then((groups) => {
       console.log(groups);
       res.status(201).json({ message: "Group created successfully!" });
