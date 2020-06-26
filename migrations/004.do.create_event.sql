@@ -7,5 +7,7 @@ CREATE TABLE create_event (
     lesson_title TEXT NOT NULL,
     bible_passage TEXT NOT NULL,
     question TEXT[] NOT NULL,
+    event_leader INTEGER REFERENCES one_another_users(id) ON DELETE CASCADE,
+    group_event INTEGER REFERENCES one_another_groups(id) ON DELETE CASCADE,
     UNIQUE (id)
 )

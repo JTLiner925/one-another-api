@@ -1,18 +1,21 @@
 const express = require("express");
 const xss = require("xss");
 const EventsService = require("./events-service");
+const isAuth = require("../middleware/auth");
 
 const eventsRouter = express.Router();
 
 const serializeEvent = (event) => ({
   id: event.id,
-  announcements: event.announcements,
-  needed_items: xss(event.needed_items),
+  announcements: xss(event.announcements),
+  needed_items: event.needed_items.map(xss),
   event_date: xss(event.event_date),
   event_time: xss(event.event_time),
   lesson_title: xss(event.lesson_title),
   bible_passage: xss(event.bible_passage),
-  question: xss(event.question),
+  question: event.question.map(xss),
+  event_leader: event.event_leader,
+  group_event: event.group_event,
 })
 
 eventsRouter.route('/').get((req, res, next) => {
@@ -25,10 +28,35 @@ eventsRouter.route('/').get((req, res, next) => {
     .catch(next);
 })
 
-eventsRouter.route('/createevent').post((req, res, next) => {
+eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
-  const { announcements, needed_items, event_date, event_time, lesson_title, bible_passage, question } = req.body;
-  let eventData = { announcements, needed_items, event_date, event_time, lesson_title, bible_passage, question }
+  const { 
+    announcements, 
+    needed_items, 
+    event_date, 
+    event_time, 
+    lesson_title, 
+    bible_passage, 
+    question,
+    group_event,
+    event_leader
+  } = req.body;
+  let userId = req.userId;
+  console.log(userId)
+  let groupId = req.groupId;
+  console.log(groupId)
+  let eventData = { 
+    announcements, 
+    needed_items: needed_items.split(/\n|,/), 
+    event_date, 
+    event_time, 
+    lesson_title, 
+    bible_passage, 
+    question: question.split('\n'),
+    group_event: groupId,
+    event_leader: userId,
+     }
+  
   EventsService.addEvent(knexInstance, eventData)
   .then((events) => {
     console.log(events);
