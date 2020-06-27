@@ -19,7 +19,6 @@ const serializeGroup = (group) => ({
 
 groupsRouter.route("/").get((req, res, next) => {
   const knexInstance = req.app.get("db");
-  console.log(req.app.get("db"));
   GroupsService.getAllGroups(knexInstance)
     .then((groups) => {
       res.json(groups.map(serializeGroup));
@@ -27,19 +26,23 @@ groupsRouter.route("/").get((req, res, next) => {
     .catch(next);
 });
 groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
-  // console.log(req)
   const knexInstance = req.app.get("db");
-  const {
-    group_name,
-    user_ids
-  } = req.body;
+  const { group_name, user_ids } = req.body;
   let userId = req.userId;
-  let users = user_ids.push(userId)
- console.log(user_ids)
+  let message 
+  if (!user_ids.includes(userId.toString())) {
+    console.log('string')
+    let users = user_ids.push(userId);
+    message = 'Group Joined Successfully!'
+  }
+  else{
+    message = 'Already Joined Group'
+  }
+
+  console.log(user_ids);
   GroupsService.updateGroup(knexInstance, user_ids, group_name)
     .then((groups) => {
-      // console.log(groups);
-      res.status(201).json({ message: "Group created successfully!" });
+      res.status(201).json({ message: message });
     })
     .catch((error) => {
       console.log(error);
@@ -56,7 +59,6 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     more_info,
   } = req.body;
   let userId = req.userId;
-  // console.log(req);
   let groupData = {
     group_name,
     pitch,
@@ -69,7 +71,7 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
   };
   GroupsService.addGroup(knexInstance, groupData)
     .then((groups) => {
-      console.log(groups);
+      
       res.status(201).json({ message: "Group created successfully!" });
     })
     .catch((error) => {

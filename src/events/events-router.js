@@ -38,13 +38,13 @@ eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
     lesson_title, 
     bible_passage, 
     question,
-    group_event,
-    event_leader
+   groupid,
+    
   } = req.body;
   let userId = req.userId;
   console.log(userId)
-  let groupId = req.groupId;
-  console.log(groupId)
+  
+  console.log(groupid)
   let eventData = { 
     announcements, 
     needed_items: needed_items.split(/\n|,/), 
@@ -53,7 +53,7 @@ eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
     lesson_title, 
     bible_passage, 
     question: question.split('\n'),
-    group_event: groupId,
+    group_event: groupid,
     event_leader: userId,
      }
   
