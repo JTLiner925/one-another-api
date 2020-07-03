@@ -21,14 +21,17 @@ app.use(helmet());
 // app.get('/api/*', (req, res) => {
 //   res.json({ok: true});
 // });
-
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
 app.use("/api/users", usersRouter);
 app.use(isAuth)
 app.use("/api/groups", groupsRouter);
 app.use("/api/events", eventsRouter);
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
+
+
+
+
 
 app.use(function errorHandler(error, req, res, next) {
   let response;
