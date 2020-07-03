@@ -4,7 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
-const { NODE_ENV } = require("./config");
+const { NODE_ENV, CLIENT_ORIGIN } = require("./config");
 const usersRouter = require("./users/users-router.js");
 const groupsRouter = require("./groups/groups-router.js");
 const eventsRouter = require("./events/events-router.js");
@@ -15,7 +15,7 @@ const morganOption = NODE_ENV === "production" ? "tiny" : "common";
 
 app.use(bodyparser.json());
 app.use(morgan(morganOption));
-app.use(cors());
+app.use(cors({ origin: CLIENT_ORIGIN }));
 app.use(helmet());
 
 // app.get('/api/*', (req, res) => {
@@ -25,13 +25,9 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 app.use("/api/users", usersRouter);
-app.use(isAuth)
+app.use(isAuth);
 app.use("/api/groups", groupsRouter);
 app.use("/api/events", eventsRouter);
-
-
-
-
 
 app.use(function errorHandler(error, req, res, next) {
   let response;
