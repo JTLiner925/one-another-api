@@ -9,4 +9,4 @@ CREATE TABLE one_another_groups (
     more_info TEXT,
     user_ids TEXT[],
     UNIQUE (id)
-)
+);

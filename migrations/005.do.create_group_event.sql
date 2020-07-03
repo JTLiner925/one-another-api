@@ -4,6 +4,4 @@ CREATE TABLE group_event (
   event_id INTEGER REFERENCES create_event(id),
   event_created TIMESTAMPTZ DEFAULT now() NOT NULL,
   PRIMARY KEY (user_id, group_id, event_id)
-
-
 );
