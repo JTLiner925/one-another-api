@@ -47,7 +47,7 @@ usersRouter.route("/login").post((req, res, next) => {
         },
         "djahslkdjfhalksjdfhiwuuibbvujdksjdhf"
       );
-      res.status(200).json({ token });
+      res.status(200).json({ token, userName:loadedUser.first_name });
     })
     .catch((error) => {
       console.log(error);
