@@ -1,0 +1,278 @@
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Not Authorized","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"jwt malformed","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"jwt malformed","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"jwt must be provided","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"jwt must be provided","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"invalid signature","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"jwt malformed","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"User with id 1 created.","level":"info"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"User with id 1 created.","level":"info"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"User with id 1 created.","level":"info"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"User with id 1 created.","level":"info"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/users/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"Unauthorized request to path: /api/events/","level":"error"}
+{"message":"Unauthorized request","level":"error"}
+{"message":"user_email is required","level":"error"}
+{"message":"user_password is required","level":"error"}
+{"message":"first_name is required","level":"error"}

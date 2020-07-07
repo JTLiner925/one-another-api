@@ -1,5 +1,6 @@
 const express = require("express");
 const xss = require("xss");
+const logger = require('../logger');
 const GroupsService = require("./groups-service");
 const isAuth = require("../middleware/auth");
 
@@ -44,11 +45,20 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
     .then((groups) => {
       res.status(201).json({ message: message });
     })
+    logger.info(`User with id ${userId} joined group.`)
     .catch((error) => {
       console.log(error);
     });
 });
 groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
+  for (const field of ['group_name', 'leader_phone', 'group_location', 'time_date']){
+    if(!req.body[field]){
+      logger.error(`${field} is required`);
+      return res.status(400).send({
+        error: { message: `'${field}' is required` },
+      })
+    }
+  }
   const knexInstance = req.app.get("db");
   const {
     group_name,
@@ -70,8 +80,8 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     user_ids: `{ ${userId} }`,
   };
   GroupsService.addGroup(knexInstance, groupData)
-    .then((groups) => {
-      
+    .then((group) => {
+      logger.info(`Group with name ${group.group_name} created.`)
       res.status(201).json({ message: "Group created successfully!" });
     })
     .catch((error) => {

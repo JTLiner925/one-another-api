@@ -1,7 +1,7 @@
 const express = require("express");
 const xss = require("xss");
 const logger = require('../logger');
-var validator = require("email-validator");
+const validator = require("email-validator");
 const UsersService = require("./users-service");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -15,8 +15,8 @@ const serializeUser = (user) => ({
   user_password: xss(user.user_password),
   first_name: xss(user.first_name),
   last_name: xss(user.last_name),
-  address: xss(user.user_address),
-  bio: xss(user.user_bio),
+  user_address: xss(user.user_address),
+  user_bio: xss(user.user_bio),
 });
 
 usersRouter.route("/").get((req, res, next) => {

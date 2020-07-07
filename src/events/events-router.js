@@ -1,5 +1,6 @@
 const express = require("express");
 const xss = require("xss");
+const logger = require('../logger');
 const EventsService = require("./events-service");
 const isAuth = require("../middleware/auth");
 
@@ -29,6 +30,14 @@ eventsRouter.route('/').get((req, res, next) => {
 })
 
 eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
+  for(const field of ['event_date', 'event_time', 'lesson_title', 'bible_passage', 'question']){
+    if(!req.body[field]){
+      logger.error(`${field} is required`);
+      return res.status(400).send({
+        error: { message: `'${field}' is required` },
+      })
+    }
+  }
   const knexInstance = req.app.get("db");
   const { 
     announcements, 
@@ -58,8 +67,8 @@ eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
      }
   
   EventsService.addEvent(knexInstance, eventData)
-  .then((events) => {
-    console.log(events);
+  .then((event) => {
+    logger.infor(`Event with id ${event.id} created`)
     res.status(201).json({ message: 'Event created successfully!'})
   })
   .catch((error) => {

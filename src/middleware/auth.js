@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   const authHeader = req.get("Authorization");
   logger.error(`Unauthorized request to path: ${req.path}`)
   if (!authHeader) {
-    const error = new Error("Not Authorized");
+    const error = new Error("Unauthorized request");
     error.statusCode = 401;
     throw error;
   }
@@ -18,8 +18,8 @@ module.exports = (req, res, next) => {
     throw err;
   }
   if (!decodedToken) {
-    const error = new Error("Not Authorized");
-    error.statusCode = 401;
+    const error = new Error("Unauthorized request");
+    error.statusCode = 401; 
     throw error;
   }
   req.userId = decodedToken.id
