@@ -90,12 +90,12 @@ usersRouter.route("/signup").post((req, res, next) => {
     last_name,
   } = req.body;
 
-  if(!validator.validate(user_email)) {
-    logger.error(`Invalid email '${user_email}' supplied`);
-    return res.status(400).send({
-      error: { message: `'Email' must be a valid Email` },
-    });
-  }
+  // if(!validator.validate(user_email)) {
+  //   logger.error(`Invalid email '${user_email}' supplied`);
+  //   return res.status(400).send({
+  //     error: { message: `'Email' must be a valid Email` },
+  //   });
+  // }
 
   bcrypt.hash(user_password, 12).then((hashedPassword) => {
     let userData = {
