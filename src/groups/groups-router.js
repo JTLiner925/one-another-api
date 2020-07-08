@@ -43,7 +43,7 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
   console.log(user_ids);
   GroupsService.updateGroup(knexInstance, user_ids, group_name)
     .then((group) => {
-      logger.info(`User joined group with id ${group.id}.`)
+      // logger.info(`User joined group with id ${group.id}.`)
       res.status(201).json({ message: message });
     })
     .catch((error) => {
