@@ -68,7 +68,7 @@ eventsRouter.route('/createevent', isAuth).post((req, res, next) => {
   
   EventsService.addEvent(knexInstance, eventData)
   .then((event) => {
-    logger.infor(`Event with id ${event.id} created`)
+    logger.info(`Event with id ${event.id} created`)
     res.status(201).json({ message: 'Event created successfully!'})
   })
   .catch((error) => {
