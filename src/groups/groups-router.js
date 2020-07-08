@@ -31,7 +31,7 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
   const { group_name, user_ids } = req.body;
   let userId = req.userId;
   let message 
-  if (!user_ids.includes(userId)) {
+  if (!user_ids.includes(userId.toString())) {
     console.log('string')
     let users = user_ids.push(userId);
     message = 'Group Joined Successfully!'
