@@ -48,13 +48,7 @@ usersRouter.route("/login").post((req, res, next) => {
       console.log(user);
       loadedUser = user;
       console.log("pw:", user_password, user.user_password);
-      return bcrypt.compare(user_password, user.user_password, function(err, result){
-        if (result == true) {
-          res.redirect('/dashboard');
-      } else {
-       res.send('Incorrect password');
-      }
-      })
+      return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
 
@@ -72,9 +66,9 @@ usersRouter.route("/login").post((req, res, next) => {
     })
     .catch((error) => {
       console.log(error);
-      res.status(400).send({
-        error: { message: 'Invalid Password'}
-    });
+    //   res.status(400).send({
+    //     error: { message: 'Invalid Password'}
+    // });
   });
 });
 
