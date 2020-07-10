@@ -61,14 +61,12 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      res.status(204).send({  error: { message: 'Invalid Password' },})
+      
       
     })
     .catch((error) => {
       console.log(error);
-      return res.status(400).send({
-        error: { message: 'Invalid Password' },
-      })
+      
     });
 });
 
