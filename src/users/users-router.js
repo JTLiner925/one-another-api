@@ -54,6 +54,7 @@ usersRouter.route("/login").post((req, res, next) => {
         {
           user_email: loadedUser.user_email,
           id: loadedUser.id,
+          user_password: loadedUser.user_password
         },
         "djahslkdjfhalksjdfhiwuuibbvujdksjdhf"
       );
