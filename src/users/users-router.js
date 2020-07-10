@@ -49,8 +49,8 @@ usersRouter.route("/login").post((req, res, next) => {
   UsersService.getByEmail(knexInstance, user_email)
     .then((user) => {
       console.log(user);
-      hashed = user.user_password;
-      bcrypt.compare(user_password, hashed)
+      loadedUser = user.user_password;
+      bcrypt.compare(user_password, loadedUser)
     })
     .then((hash) => {
       const token = jwt.sign(
