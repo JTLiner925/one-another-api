@@ -31,17 +31,6 @@ usersRouter.route("/").get((req, res, next) => {
 });
 
 usersRouter.route("/login").post((req, res, next) => {
-  // for(const field of ['user_email', 'user_password']){
-  //   if(!req.body[field]){
-  //     logger.error(`${field} is required`);
-  //     return res.status(400).send({
-  //       error: { message: `'${field}' is required` },
-  //     })
-  //   }
-  // }
-
- 
-
   // res.send("Hello, node!");
   const knexInstance = req.app.get("db");
   const { user_email, user_password } = req.body;
@@ -60,7 +49,6 @@ usersRouter.route("/login").post((req, res, next) => {
         },
         "djahslkdjfhalksjdfhiwuuibbvujdksjdhf"
       );
-      logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
     })
     .catch((error) => {
