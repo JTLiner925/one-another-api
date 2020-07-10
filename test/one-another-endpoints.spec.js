@@ -1,12 +1,12 @@
 const knex = require("knex");
-const expect = require('chai').expect;
+const expect = require("chai").expect;
 const fixtures = require("./user-fixtures");
-const JWT = require('jsonwebtoken');
+const JWT = require("jsonwebtoken");
 const app = require("../src/app");
-const secret = 'NeverShareYourSecret';
+const secret = "NeverShareYourSecret";
 const validator = require("email-validator");
 
-const auth = require('../src/middleware/auth')
+const auth = require("../src/middleware/auth");
 
 describe("oneAnother Endpoints", () => {
   let db;
@@ -17,7 +17,7 @@ describe("oneAnother Endpoints", () => {
       connection: process.env.TEST_DATABASE_URL,
     });
     app.set("db", db);
-    console.log(process.env.TEST_DATABASE_URL)
+    console.log(process.env.TEST_DATABASE_URL);
   });
 
   after("disconnect from db", () => db.destroy());
@@ -50,7 +50,10 @@ describe("oneAnother Endpoints", () => {
           user_password: "password123",
           first_name: "Rex",
         })
-        .expect(500, { message: "Unauthorized request" , error: { statusCode: 401 }});
+        .expect(500, {
+          message: "Unauthorized request",
+          error: { statusCode: 401 },
+        });
     });
 
     beforeEach("insert group", () => {
@@ -64,9 +67,12 @@ describe("oneAnother Endpoints", () => {
           group_name: "Cheese",
           leader_phone: "512-654-9090",
           group_location: "my house",
-          time_date: 'Tuesdays at 6pm'
+          time_date: "Tuesdays at 6pm",
         })
-        .expect(500, { message: "Unauthorized request" , error: { statusCode: 401 }});
+        .expect(500, {
+          message: "Unauthorized request",
+          error: { statusCode: 401 },
+        });
     });
     beforeEach("insert event", () => {
       return db.into("create_event").insert(testEvents);
@@ -79,10 +85,18 @@ describe("oneAnother Endpoints", () => {
           event_date: "july 12th",
           event_time: "5pm",
           lesson_title: "The Great Commission",
-          bible_passage: 'Matthew 28:18-20',
-          question: ['What grabbed your attention?','What did you like/dislike about the passage?','What does this passage say about God/people?','How can you apply this passage to your life?'],
+          bible_passage: "Matthew 28:18-20",
+          question: [
+            "What grabbed your attention?",
+            "What did you like/dislike about the passage?",
+            "What does this passage say about God/people?",
+            "How can you apply this passage to your life?",
+          ],
         })
-        .expect(500, { message: "Unauthorized request" , error: { statusCode: 401 }});
+        .expect(500, {
+          message: "Unauthorized request",
+          error: { statusCode: 401 },
+        });
     });
   });
 
@@ -97,7 +111,6 @@ describe("oneAnother Endpoints", () => {
 
     describe(`GET /api/users`, () => {
       context("Given there are users in the database", () => {
-
         beforeEach("insert users", () => {
           return db.into("one_another_users").insert(testUsers);
         });
@@ -109,81 +122,86 @@ describe("oneAnother Endpoints", () => {
     });
   });
 
-    describe(`POST /api/users`, ()=> {
-      const testUsers = fixtures.makeUsersArray();
-      it(`responds with 400 missing 'email' if not supplied`, () => {
-        const newUser = {
-          id: 4,
-      // user_email: 'djmbush@yahoo.com',
-      user_password: 'ggggggggg',
-      first_name: 'Jared',
-      last_name: 'Bush',
-      user_address: '309 Tallwood Dr',
-      user_bio: 'I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!',    
-        };
-        return supertest(app)
+  describe(`POST /api/users`, () => {
+    const testUsers = fixtures.makeUsersArray();
+    it(`responds with 400 missing 'email' if not supplied`, () => {
+      const newUser = {
+        id: 4,
+        // user_email: 'djmbush@yahoo.com',
+        user_password: "ggggggggg",
+        first_name: "Jared",
+        last_name: "Bush",
+        user_address: "309 Tallwood Dr",
+        user_bio:
+          "I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!",
+      };
+      return supertest(app)
         .post(`/api/users/signup`)
         .send(newUser)
         .expect(400, {
           error: {
-            "message": "'user_email' is required"
-          }
-        })
-      })
+            message: "'user_email' is required",
+          },
+        });
+    });
 
-      it(`responds with 400 missing 'password' if not supplied`, () => {
-        const newUser = {
-          id: 4,
-      user_email: 'djmbush@yahoo.com',
-      // user_password: 'ggggggggg',
-      first_name: 'Jared',
-      last_name: 'Bush',
-      user_address: '309 Tallwood Dr',
-      user_bio: 'I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!',    
-        };
-        return supertest(app)
+    it(`responds with 400 missing 'password' if not supplied`, () => {
+      const newUser = {
+        id: 4,
+        user_email: "djmbush@yahoo.com",
+        // user_password: 'ggggggggg',
+        first_name: "Jared",
+        last_name: "Bush",
+        user_address: "309 Tallwood Dr",
+        user_bio:
+          "I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!",
+      };
+      return supertest(app)
         .post(`/api/users/signup`)
         .send(newUser)
         .expect(400, {
           error: {
-            "message": "'user_password' is required"
-          }
-        })
-      })
+            message: "'user_password' is required",
+          },
+        });
+    });
 
-      it(`responds with 400 missing 'first_name' if not supplied`, () => {
-        const newUser = {
-          id: 4,
-      user_email: 'djmbush@yahoo.com',
-      user_password: 'ggggggggg',
-      // first_name: 'Jared',
-      last_name: 'Bush',
-      user_address: '309 Tallwood Dr',
-      user_bio: 'I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!',    
-        };
-        return supertest(app)
+    it(`responds with 400 missing 'first_name' if not supplied`, () => {
+      const newUser = {
+        id: 4,
+        user_email: "djmbush@yahoo.com",
+        user_password: "ggggggggg",
+        // first_name: 'Jared',
+        last_name: "Bush",
+        user_address: "309 Tallwood Dr",
+        user_bio:
+          "I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!",
+      };
+      return supertest(app)
         .post(`/api/users/signup`)
         .send(newUser)
         .expect(400, {
           error: {
-            "message": "'first_name' is required"
-          }
-        })
-      })
-    })
-   
+            message: "'first_name' is required",
+          },
+        });
+    });
+  });
+
   describe(`GET /api/groups`, () => {
     context(`Given no groups`, () => {
-      
       it(`responds with 200 and an empty list`, () => {
-        return supertest(app).get("/api/groups")
-        .set('Authorization',`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM` )
-        .expect(200, []);
+        return supertest(app)
+          .get("/api/groups")
+          .set(
+            "Authorization",
+            `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM`
+          )
+          .expect(200, []);
       });
     });
 
     describe(`GET /api/groups`, () => {
-      
       context("Given there are groups in the database", () => {
         const testGroups = fixtures.makeGroupsArray();
 
@@ -192,12 +210,15 @@ describe("oneAnother Endpoints", () => {
         });
 
         it("responds with 200 and all of the groups", () => {
-          return supertest(app).get("/api/groups")
-          .set('Authorization',`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM` )
-          .expect(200, testGroups);
+          return supertest(app)
+            .get("/api/groups")
+            .set(
+              "Authorization",
+              `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM`
+            )
+            .expect(200, testGroups);
         });
       });
     });
   });
-
 });

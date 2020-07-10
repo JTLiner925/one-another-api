@@ -31,14 +31,14 @@ usersRouter.route("/").get((req, res, next) => {
 });
 
 usersRouter.route("/login").post((req, res, next) => {
-  for(const field of ['user_email', 'user_password']){
-    if(!req.body[field]){
-      logger.error(`${field} is required`);
-      return res.status(400).send({
-        error: { message: `'${field}' is required` },
-      })
-    }
-  }
+  // for(const field of ['user_email', 'user_password']){
+  //   if(!req.body[field]){
+  //     logger.error(`${field} is required`);
+  //     return res.status(400).send({
+  //       error: { message: `'${field}' is required` },
+  //     })
+  //   }
+  // }
 
  
 
