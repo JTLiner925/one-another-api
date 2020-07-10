@@ -51,7 +51,7 @@ usersRouter.route("/login").post((req, res, next) => {
       return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
-      if(matched == true){
+      
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
@@ -61,12 +61,13 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      }return res.status(400).send({
-        error: { message: 'Invalid Password' },
-      })
+      
     })
     .catch((error) => {
       console.log(error);
+      return res.status(400).send({
+        error: { message: 'Invalid Password' },
+      })
     });
 });
 
