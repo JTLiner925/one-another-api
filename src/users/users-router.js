@@ -47,26 +47,20 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       loadedUser = user;
-      bcrypt.compare(user_password, user.user_password, function(err, result){
-        if (result == true) {
-          return res.json()
-        } else {
-          res.send('Incorrect password');
-        }
-      })
+      return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
+      if(matched == true){
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
           id: loadedUser.id,
-          user_password: loadedUser.user_password
         },
         "djahslkdjfhalksjdfhiwuuibbvujdksjdhf"
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      
+      }
     })
     .catch((error) => {
       console.log(error);
