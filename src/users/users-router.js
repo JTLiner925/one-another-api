@@ -4,6 +4,7 @@ const logger = require('../logger');
 const UsersService = require("./users-service");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { error } = require("winston");
 
 const usersRouter = express.Router();
 
@@ -52,7 +53,7 @@ usersRouter.route("/login").post((req, res, next) => {
       
     })
     .then((matched) => {
-
+      if(matched){
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
@@ -62,14 +63,17 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      res.status(!200).send({error: {message: 'Invalid Password'}})
-      
+      } else{
+        res.status(401).send({
+          error: { message: 'Invalid username and password combination'}
+        })
+      }
     })
     .catch((error) => {
       console.log(error);
-    //   res.status(400).send({
-    //     error: { message: 'Invalid Password'}
-    // });
+      res.status(500).send({
+        error: { message: error.message}
+    });
   });
 });
 
