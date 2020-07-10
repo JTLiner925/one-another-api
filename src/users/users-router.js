@@ -60,6 +60,8 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
+      }else {
+        throw new Error('Invalid password')
       }
     })
     .catch((error) => {
