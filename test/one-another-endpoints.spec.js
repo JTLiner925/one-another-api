@@ -7,6 +7,7 @@ const secret = 'NeverShareYourSecret';
 const validator = require("email-validator");
 
 const auth = require('../src/middleware/auth')
+
 describe("oneAnother Endpoints", () => {
   let db;
 
@@ -169,60 +170,34 @@ describe("oneAnother Endpoints", () => {
           }
         })
       })
-
-      // it(`responds with 400 invalid 'email' supplied`, () => {
-      //   const newUser = {
-      //     id: 4,
-      // user_email: 'sh@yaoo.com',
-      // user_password: 'ggggggggg',
-      // first_name: 'Jared',
-      // last_name: 'Bush',
-      // user_address: '309 Tallwood Dr',
-      // user_bio: 'I am currently an unemployed ESL teacher living with some friends. I am looking for community and tacos!',    
-      //   };
-      //   return supertest(app)
-      //   .post(`/api/users/signup`)
-      //   .send(newUser)
-      // need help with authentication
-      //   .auth('user_email')
-      //   .expect(400, {
-      //     error: {
-      //       "message": "'Email' must be a valid Email"
-      //     }
-      //   })
-      // })
-      // context('Given email is authorized', () => {
-        
-      //   beforeEach('add user', ()=> {
-      //     return db.into('one_another_users').insert(testUsers);
-      //   });
-
-      //   it('responds with 200 and ')
-      // })
     })
    
-  // describe(`GET /api/groups`, () => {
-  //   context(`Given no groups`, () => {
+  describe(`GET /api/groups`, () => {
+    context(`Given no groups`, () => {
       
-  //     it(`responds with 200 and an empty list`, () => {
-  //       return supertest(app).get("/api/groups").set('Authorization',`token ${auth.decodedToken}` ).expect(200, []);
-  //     });
-  //   });
+      it(`responds with 200 and an empty list`, () => {
+        return supertest(app).get("/api/groups")
+        .set('Authorization',`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM` )
+        .expect(200, []);
+      });
+    });
 
-    // describe(`GET /api/groups`, () => {
+    describe(`GET /api/groups`, () => {
       
-    //   context("Given there are groups in the database", () => {
-    //     const testGroups = fixtures.makeGroupsArray();
+      context("Given there are groups in the database", () => {
+        const testGroups = fixtures.makeGroupsArray();
 
-    //     beforeEach("insert groups", () => {
-    //       return db.into("one_another_groups").insert(testGroups);
-    //     });
+        beforeEach("insert groups", () => {
+          return db.into("one_another_groups").insert(testGroups);
+        });
 
-    //     it("responds with 200 and all of the groups", () => {
-    //       return supertest(app).get("/api/groups").set('Authorization', "djahslkdjfhalksjdfhiwuuibbvujdksjdhf").expect(200, testGroups);
-    //     });
-    //   });
-    // });
-  // });
+        it("responds with 200 and all of the groups", () => {
+          return supertest(app).get("/api/groups")
+          .set('Authorization',`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM` )
+          .expect(200, testGroups);
+        });
+      });
+    });
+  });
 
 });
