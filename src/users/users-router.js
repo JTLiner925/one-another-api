@@ -66,7 +66,7 @@ usersRouter.route("/login").post((req, res, next) => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      this.setState({ error });
     });
 });
 
