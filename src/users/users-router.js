@@ -49,6 +49,7 @@ usersRouter.route("/login").post((req, res, next) => {
       loadedUser = user;
       console.log("pw:", user_password, user.user_password);
       return bcrypt.compare(user_password, user.user_password)
+      
     })
     .then((matched) => {
 
@@ -61,7 +62,7 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      
+      res.status(!200).send({error: {message: 'Invalid Password'}})
       
     })
     .catch((error) => {
