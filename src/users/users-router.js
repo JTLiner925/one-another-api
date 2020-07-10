@@ -50,13 +50,7 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       hashed = user.user_password;
-      bcrypt.compare(user_password, hashed, function (result){
-        if(result === true ){
-          res.json()
-        } else {
-          throw new Error('Invalid Password')
-        }
-      })
+      bcrypt.compare(user_password, hashed)
     })
     .then((hash) => {
       const token = jwt.sign(
