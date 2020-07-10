@@ -50,7 +50,7 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       loadedUser = user;
-      return bcrypt.compare(user_password, user.hashedPassword);
+      return bcrypt.compare(user_password, loadedUser.hashedPassword);
     })
     .then((hash) => {
       const token = jwt.sign(
