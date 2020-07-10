@@ -221,4 +221,37 @@ describe("oneAnother Endpoints", () => {
       });
     });
   });
+  describe(`GET /api/events`, () => {
+    context(`Given no events`, () => {
+      it(`responds with 200 and an empty list`, () => {
+        return supertest(app)
+          .get("/api/events")
+          .set(
+            "Authorization",
+            `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM`
+          )
+          .expect(200, []);
+      });
+    });
+
+    describe(`GET /api/events`, () => {
+      context("Given there are events in the database", () => {
+        const testEvents = fixtures.makeEventsArray();
+
+        beforeEach("insert events", () => {
+          return db.into("create_event").insert(testEvents);
+        });
+
+        it("responds with 200 and all of the events", () => {
+          return supertest(app)
+            .get("/api/events")
+            .set(
+              "Authorization",
+              `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoianRsaW5lcjkyNUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNTk0MzM2NjczfQ.oZ-0VaXYxOPWcO4N-DHxBvEhWQMYOjrYc9yd9QqV6bM`
+            )
+            .expect(200, testEvents);
+        });
+      });
+    });
+  });
 });

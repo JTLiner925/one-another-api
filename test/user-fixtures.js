@@ -83,8 +83,8 @@ function makeEventsArray() {
         "What does this passage say about God/people?",
         "How can you apply this passage to your life?",
       ],
-      event_leader: 1,
-      group_event: 2,
+      event_leader: null,
+      group_event: null,
     },
     {
       id: 2,
@@ -100,8 +100,8 @@ function makeEventsArray() {
         "What does this passage say about God/people?",
         "How can you apply this passage to your life?",
       ],
-      event_leader: 2,
-      group_event: 3,
+      event_leader: null,
+      group_event: null,
     },
     {
       id: 3,
@@ -117,8 +117,8 @@ function makeEventsArray() {
         "What does this passage say about God/people?",
         "How can you apply this passage to your life?",
       ],
-      event_leader: 3,
-      group_event: 1,
+      event_leader: null,
+      group_event: null,
     },
   ];
 }
