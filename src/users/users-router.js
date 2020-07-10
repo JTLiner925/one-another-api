@@ -47,6 +47,7 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       loadedUser = user;
+      console.log("pw:", user_password, user.user_password);
       return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
