@@ -1,13 +1,11 @@
 const express = require("express");
 const xss = require("xss");
 const logger = require('../logger');
-const validator = require("email-validator");
 const UsersService = require("./users-service");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const usersRouter = express.Router();
-// const jsonParser = express.json()
 
 const serializeUser = (user) => ({
   id: user.id,
@@ -42,7 +40,6 @@ usersRouter.route("/login").post((req, res, next) => {
 
  
 
-  // res.send("Hello, node!");
   const knexInstance = req.app.get("db");
   const { user_email, user_password } = req.body;
   let loadedUser;
@@ -50,7 +47,7 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       loadedUser = user;
-      bcrypt.compare(user_password, loadedUser.user_password)
+      return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
       const token = jwt.sign(
@@ -80,7 +77,6 @@ usersRouter.route("/signup").post((req, res, next) => {
   }
 
 
-  // res.send("Hello, node!");
   const knexInstance = req.app.get("db");
   const {
     user_address,
@@ -91,12 +87,7 @@ usersRouter.route("/signup").post((req, res, next) => {
     last_name,
   } = req.body;
 
-  // if(!validator.validate(user_email)) {
-  //   logger.error(`Invalid email '${user_email}' supplied`);
-  //   return res.status(400).send({
-  //     error: { message: `'Email' must be a valid Email` },
-  //   });
-  // }
+ 
 
   bcrypt.hash(user_password, 12).then((hashedPassword) => {
     let userData = {
