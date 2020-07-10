@@ -1,7 +1,5 @@
 const express = require("express");
 const xss = require("xss");
-const logger = require('../logger');
-const validator = require("email-validator");
 const UsersService = require("./users-service");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -15,8 +13,8 @@ const serializeUser = (user) => ({
   user_password: xss(user.user_password),
   first_name: xss(user.first_name),
   last_name: xss(user.last_name),
-  user_address: xss(user.user_address),
-  user_bio: xss(user.user_bio),
+  address: xss(user.user_address),
+  bio: xss(user.user_bio),
 });
 
 usersRouter.route("/").get((req, res, next) => {
@@ -39,7 +37,7 @@ usersRouter.route("/login").post((req, res, next) => {
     .then((user) => {
       console.log(user);
       loadedUser = user;
-      return bcrypt.compare(user_password, loadedUser.user_password);
+      return bcrypt.compare(user_password, user.user_password);
     })
     .then((matched) => {
       const token = jwt.sign(
@@ -57,16 +55,6 @@ usersRouter.route("/login").post((req, res, next) => {
 });
 
 usersRouter.route("/signup").post((req, res, next) => {
-  for(const field of ['user_email', 'user_password', 'first_name']){
-    if(!req.body[field]){
-      logger.error(`${field} is required`);
-      return res.status(400).send({
-        error: { message: `'${field}' is required` },
-      })
-    }
-  }
-
-
   // res.send("Hello, node!");
   const knexInstance = req.app.get("db");
   const {
@@ -77,14 +65,6 @@ usersRouter.route("/signup").post((req, res, next) => {
     first_name,
     last_name,
   } = req.body;
-
-  // if(!validator.validate(user_email)) {
-  //   logger.error(`Invalid email '${user_email}' supplied`);
-  //   return res.status(400).send({
-  //     error: { message: `'Email' must be a valid Email` },
-  //   });
-  // }
-
   bcrypt.hash(user_password, 12).then((hashedPassword) => {
     let userData = {
       user_address,
@@ -95,9 +75,8 @@ usersRouter.route("/signup").post((req, res, next) => {
       last_name,
     };
     UsersService.addUser(knexInstance, userData)
-      .then((user) => {
-        logger.info(`User with id ${user.id} created.`)
-        console.log(user);
+      .then((users) => {
+        console.log(users);
         res.status(201).json({ message: "User created successfully" });
       })
       .catch((error) => {
