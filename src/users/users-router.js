@@ -51,7 +51,7 @@ usersRouter.route("/login").post((req, res, next) => {
       return bcrypt.compare(user_password, user.user_password)
     })
     .then((matched) => {
-      if(matched == true){
+      if(matched === true){
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
@@ -64,6 +64,7 @@ usersRouter.route("/login").post((req, res, next) => {
       } else {
         res.status(400).send({
           error: { message: 'Invalid Password'}
+          
         })
       }
       
