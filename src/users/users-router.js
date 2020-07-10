@@ -53,6 +53,7 @@ usersRouter.route("/login").post((req, res, next) => {
       bcrypt.compare(user_password, loadedUser)
     })
     .then((hash) => {
+      if(hash === true){
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
@@ -62,6 +63,9 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
+      }else{
+        throw new Error
+      }
     })
     .catch((error) => {
       console.log(error);
