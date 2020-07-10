@@ -49,11 +49,10 @@ usersRouter.route("/login").post((req, res, next) => {
   UsersService.getByEmail(knexInstance, user_email)
     .then((user) => {
       console.log(user);
-      loadedUser = user.user_password;
-      bcrypt.compare(user_password, loadedUser)
+      loadedUser = user;
+      bcrypt.compare(user_password, loadedUser.user_password)
     })
-    .then((hash) => {
-      if(hash === true){
+    .then((matched) => {
       const token = jwt.sign(
         {
           user_email: loadedUser.user_email,
@@ -63,9 +62,7 @@ usersRouter.route("/login").post((req, res, next) => {
       );
       logger.info(`User with id ${loadedUser.id} signed in.`)
       res.status(200).json({ token, userName:loadedUser.first_name });
-      }else{
-        throw new Error
-      }
+      
     })
     .catch((error) => {
       console.log(error);
