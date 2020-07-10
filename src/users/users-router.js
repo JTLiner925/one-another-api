@@ -69,6 +69,7 @@ usersRouter.route("/login").post((req, res, next) => {
       res.status(400).send({
         error: { message: 'Invalid Password'}
     });
+  });
 });
 
 usersRouter.route("/signup").post((req, res, next) => {
