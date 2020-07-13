@@ -24,8 +24,8 @@ const GroupsService = {
 
   updateGroup(knex, ids, groupName) {
     return knex("one_another_groups")
-    .where('group_name', '=', groupName)
-    .update({user_ids: ids})
+      .where("group_name", "=", groupName)
+      .update({ user_ids: ids });
   },
 };
 

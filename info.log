@@ -569,3 +569,6 @@
 {"message":"leader_phone is required","level":"error"}
 {"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
 {"message":"time_date is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"time_date is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
