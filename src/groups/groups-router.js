@@ -88,7 +88,7 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
   GroupsService.addGroup(knexInstance, groupData)
     .then((group) => {
       logger.info(`Group with name ${group.group_name} created.`);
-      res.status(201).json({ message: "Group created successfully!" });
+      res.status(201).json({ createMessage: createMessage });
     })
     .catch((error) => {
       console.log(error);
