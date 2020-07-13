@@ -50,12 +50,7 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
     });
 });
 groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
-  for (const field of [
-    "group_name",
-    "leader_phone",
-    "group_location",
-    "time_date",
-  ]) {
+  for (const field of ["leader_phone", "group_location", "time_date"]) {
     if (!req.body[field]) {
       logger.error(`${field} is required`);
       // message = `'${field}' is required`;
@@ -90,7 +85,9 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     .then((group) => {
       if (group) {
         logger.info(`Group with name ${group.group_name} created.`);
-        res.status(201).json({ message: message });
+        res
+          .status(201)
+          .json({ message: `Group with name ${group.group_name} created.` });
       } else {
         res.status(400).send({
           error: { message: `Missing ${field} is required` },
