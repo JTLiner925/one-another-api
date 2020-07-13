@@ -524,3 +524,42 @@
 {"message":"Unauthorized request to path: /api/groups","level":"error"}
 {"message":"Unauthorized request to path: /api/events","level":"error"}
 {"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/crategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/crategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Group with name  created.","level":"info"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Group with name joke created.","level":"info"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Group with name coke created.","level":"info"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"group_name is required","level":"error"}

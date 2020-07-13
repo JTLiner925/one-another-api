@@ -56,12 +56,12 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     "group_location",
     "time_date",
   ]) {
-    let createMessage;
     if (!req.body[field]) {
       logger.error(`${field} is required`);
-      createMessage = `'${field}' is required`;
-    } else {
-      createMessage = "Group created successfully!";
+      // message = `'${field}' is required`;
+      return res.status(400).send({
+        error: { message: `'${field}' is required` },
+      });
     }
   }
   const knexInstance = req.app.get("db");
@@ -74,6 +74,7 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     more_info,
   } = req.body;
   let userId = req.userId;
+
   let groupData = {
     group_name,
     pitch,
@@ -84,14 +85,24 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     group_leader: userId,
     user_ids: `{ ${userId} }`,
   };
+  let message;
 
   GroupsService.addGroup(knexInstance, groupData)
     .then((group) => {
-      logger.info(`Group with name ${group.group_name} created.`);
-      res.status(201).json({ createMessage: createMessage });
+      if (group) {
+        logger.info(`Group with name ${group.group_name} created.`);
+        res.status(201).json({ message: message });
+      } else {
+        res.status(401).send({
+          error: { message: `Missing ${field} is required` },
+        });
+      }
     })
     .catch((error) => {
       console.log(error);
+      res.status(500).send({
+        error: { message: error.message },
+      });
     });
 });
 
