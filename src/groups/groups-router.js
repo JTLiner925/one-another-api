@@ -85,7 +85,6 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     group_leader: userId,
     user_ids: `{ ${userId} }`,
   };
-  let message;
 
   GroupsService.addGroup(knexInstance, groupData)
     .then((group) => {
@@ -93,7 +92,7 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
         logger.info(`Group with name ${group.group_name} created.`);
         res.status(201).json({ message: message });
       } else {
-        res.status(401).send({
+        res.status(400).send({
           error: { message: `Missing ${field} is required` },
         });
       }
