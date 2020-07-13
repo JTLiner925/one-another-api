@@ -1,6 +1,6 @@
 const express = require("express");
 const xss = require("xss");
-const logger = require('../logger');
+const logger = require("../logger");
 const GroupsService = require("./groups-service");
 const isAuth = require("../middleware/auth");
 
@@ -30,14 +30,13 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
   const { group_name, user_ids } = req.body;
   let userId = req.userId;
-  let message 
+  let message;
   if (!user_ids.includes(userId.toString())) {
-    console.log('string')
+    console.log("string");
     let users = user_ids.push(userId);
-    message = 'Group Joined Successfully!'
-  }
-  else{
-    message = 'Already Joined Group'
+    message = "Group Joined Successfully!";
+  } else {
+    message = "Already Joined Group";
   }
 
   console.log(user_ids);
@@ -51,12 +50,18 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
     });
 });
 groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
-  for (const field of ['group_name', 'leader_phone', 'group_location', 'time_date']){
-    if(!req.body[field]){
+  for (const field of [
+    "group_name",
+    "leader_phone",
+    "group_location",
+    "time_date",
+  ]) {
+    let createMessage;
+    if (!req.body[field]) {
       logger.error(`${field} is required`);
-      return res.status(400).send({
-        error: { message: `'${field}' is required` },
-      })
+      createMessage = `'${field}' is required`;
+    } else {
+      createMessage = "Group created successfully!";
     }
   }
   const knexInstance = req.app.get("db");
@@ -79,9 +84,10 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
     group_leader: userId,
     user_ids: `{ ${userId} }`,
   };
+
   GroupsService.addGroup(knexInstance, groupData)
     .then((group) => {
-      logger.info(`Group with name ${group.group_name} created.`)
+      logger.info(`Group with name ${group.group_name} created.`);
       res.status(201).json({ message: "Group created successfully!" });
     })
     .catch((error) => {
