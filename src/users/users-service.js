@@ -4,7 +4,6 @@ const UsersService = {
   },
 
   addUser(knex, newUser) {
-    console.log(newUser)
     return knex
       .insert(newUser)
       .into('one_another_users')

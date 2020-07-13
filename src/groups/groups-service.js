@@ -4,7 +4,6 @@ const GroupsService = {
   },
 
   addGroup(knex, newGroup) {
-    console.log(newGroup);
     return knex
       .insert(newGroup)
       .into("one_another_groups")

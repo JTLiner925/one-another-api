@@ -4,7 +4,6 @@ const EventsService = {
   },
 
   addEvent(knex, newEvent) {
-    console.log(newEvent)
     return knex
       .insert(newEvent)
       .into('create_event')

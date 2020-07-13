@@ -32,17 +32,14 @@ groupsRouter.route("/joingroup", isAuth).post((req, res, next) => {
   let userId = req.userId;
   let message;
   if (!user_ids.includes(userId.toString())) {
-    console.log("string");
     let users = user_ids.push(userId);
     message = "Group Joined Successfully!";
   } else {
     message = "Already Joined Group";
   }
 
-  console.log(user_ids);
   GroupsService.updateGroup(knexInstance, user_ids, group_name)
     .then((group) => {
-      // logger.info(`User joined group with id ${group.id}.`)
       res.status(201).json({ message: message });
     })
     .catch((error) => {
@@ -53,7 +50,6 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
   for (const field of ["leader_phone", "group_location", "time_date"]) {
     if (!req.body[field]) {
       logger.error(`${field} is required`);
-      // message = `'${field}' is required`;
       return res.status(400).send({
         error: { message: `'${field}' is required` },
       });
@@ -95,7 +91,6 @@ groupsRouter.route("/creategroup", isAuth).post((req, res, next) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       res.status(500).send({
         error: { message: error.message },
       });

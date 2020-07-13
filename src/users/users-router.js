@@ -19,9 +19,7 @@ const serializeUser = (user) => ({
 });
 
 usersRouter.route("/").get((req, res, next) => {
-  // res.send("Hello, node!");
   const knexInstance = req.app.get("db");
-  console.log(req.app.get("db"));
   UsersService.getAllUsers(knexInstance)
     .then((users) => {
       res.json(users.map(serializeUser));
@@ -44,9 +42,7 @@ usersRouter.route("/login").post((req, res, next) => {
   let loadedUser;
   UsersService.getByEmail(knexInstance, user_email)
     .then((user) => {
-      console.log(user);
       loadedUser = user;
-      console.log("pw:", user_password, user.user_password);
       return bcrypt.compare(user_password, user.user_password);
     })
     .then((matched) => {
@@ -67,7 +63,6 @@ usersRouter.route("/login").post((req, res, next) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       res.status(500).send({
         error: { message: error.message },
       });
@@ -106,7 +101,6 @@ usersRouter.route("/signup").post((req, res, next) => {
     UsersService.addUser(knexInstance, userData)
       .then((user) => {
         logger.info(`User with id ${user.id} created.`);
-        console.log(user);
         res.status(201).json({ message: "User created successfully" });
       })
       .catch((error) => {

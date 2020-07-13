@@ -21,7 +21,6 @@ const serializeEvent = (event) => ({
 
 eventsRouter.route("/").get((req, res, next) => {
   const knexInstance = req.app.get("db");
-  console.log(req.app.get("db"));
   EventsService.getAllEvents(knexInstance)
     .then((events) => {
       res.json(events.map(serializeEvent));
@@ -81,7 +80,6 @@ eventsRouter.route("/createevent", isAuth).post((req, res, next) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       res.status(500).send({
         error: { message: error.message },
       });
