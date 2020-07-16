@@ -572,3 +572,5 @@
 {"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
 {"message":"time_date is required","level":"error"}
 {"message":"Unauthorized request to path: /api/groups/creategroup","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/createevent","level":"error"}
+{"message":"Unauthorized request to path: /api/groups/createevent","level":"error"}

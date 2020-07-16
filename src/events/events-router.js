@@ -34,7 +34,6 @@ eventsRouter.route("/createevent", isAuth).post((req, res, next) => {
     "event_time",
     "lesson_title",
     "bible_passage",
-    "question",
   ]) {
     if (!req.body[field]) {
       logger.error(`${field} is required`);
