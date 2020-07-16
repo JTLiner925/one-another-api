@@ -57,12 +57,12 @@ eventsRouter.route("/createevent", isAuth).post((req, res, next) => {
 
   let eventData = {
     announcements,
-    needed_items: needed_items.split(','),
+    needed_items: needed_items.split('/\n|,/'),
     event_date,
     event_time,
     lesson_title,
     bible_passage,
-    question: question.split(","),
+    question: question.split("\n"),
     group_event: groupid,
     event_leader: userId,
   };
