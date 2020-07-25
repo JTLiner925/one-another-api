@@ -13,9 +13,6 @@ const NeededService = {
       });
   },
 
-  // getById(knex, id) {
-  //   return knex.from("needed_items").select("*").where("id", id).first();
-  // },
   getById(knex, id) {
     return knex
       .from('one_another_users')
