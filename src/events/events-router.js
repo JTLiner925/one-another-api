@@ -72,7 +72,11 @@ eventsRouter.route("/createevent", isAuth).post((req, res, next) => {
     .then((event) => {
       if (event) {
         logger.info(`Event with id ${event.id} created`);
-        res.status(201).json({ message: "Event created successfully!" });
+        res.status(201)
+        .json({ 
+          message: "Event created successfully!",
+          eventId: event.id
+       });
       } else {
         res.status(400).send({
           error: { message: `Missing ${field} is required` },

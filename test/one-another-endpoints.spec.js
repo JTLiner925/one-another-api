@@ -17,7 +17,6 @@ describe("oneAnother Endpoints", () => {
       connection: process.env.TEST_DATABASE_URL,
     });
     app.set("db", db);
-    console.log(process.env.TEST_DATABASE_URL);
   });
 
   after("disconnect from db", () => db.destroy());

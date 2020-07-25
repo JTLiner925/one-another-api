@@ -10,6 +10,7 @@ const errorHandler = require('./error-handler')
 const usersRouter = require("./users/users-router.js");
 const groupsRouter = require("./groups/groups-router.js");
 const eventsRouter = require("./events/events-router.js");
+const neededRouter = require("./needed/needed-router")
 const app = express();
 
 
@@ -27,7 +28,7 @@ app.use("/api/users", usersRouter);
 app.use(isAuth);
 app.use("/api/groups", groupsRouter);
 app.use("/api/events", eventsRouter);
-
+app.use("/api/needed", neededRouter);
 app.use(errorHandler)
 
 module.exports = app;
