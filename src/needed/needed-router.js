@@ -13,12 +13,12 @@ neededRouter.route("/", isAuth).post((req, res, next) => {
     NeededService.getAllNeeded(knexInstance, eventId)
     .then((items) => {
       eventItems[eventId] = {item_name: items.item_name}
-      // res.json(items)
+      res.json(items)
     })
     
     .catch(next);
     // console.log(res.json(eventId))
-  res.json(eventItems);
+  // res.json(eventItems);
   })
 neededRouter.route("/add-item", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
