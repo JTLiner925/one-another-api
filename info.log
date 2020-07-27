@@ -2303,3 +2303,8 @@
 {"message":"event_id is not defined","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
