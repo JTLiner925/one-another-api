@@ -7,11 +7,14 @@ const neededRouter = express.Router();
 
 neededRouter.route("/", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
-console.log(req.body)
+  console.log(req.body);
   let eventId = req.body.event_id;
-  
-    NeededService.getAllNeeded(knexInstance, eventId).catch(next);
-res.json(eventId)
+
+  NeededService.getAllNeeded(knexInstance, eventId)
+    .then((items) => {
+      res.json(items);
+    })
+    .catch(next);
 });
 neededRouter.route("/add-item", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
