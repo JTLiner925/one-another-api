@@ -5,7 +5,19 @@ const isAuth = require("../middleware/auth");
 
 const neededRouter = express.Router();
 
-neededRouter.route("/").post((req, res, next) => {
+neededRouter.route("/")
+.get((req, res, next) => {
+  const knexInstance = req.app.get("db");
+  const { eventId } = req.body;
+  NeededService.getAllNeeded(knexInstance, eventId)
+    .then((items) => {
+      res.json(items);
+    })
+    .catch(next);
+});
+
+neededRouter.route("/")
+.post((req, res, next) => {
   const knexInstance = req.app.get("db");
   const { eventId } = req.body;
   NeededService.getAllNeeded(knexInstance, eventId)
