@@ -11,7 +11,7 @@ const serializeNeeded = (items) => ({
   user_id: items.user_id,
   item_name: items.item_name
 })
-neededRouter.route("/", isAuth).get((req, res, next) => {
+neededRouter.route("/", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
   console.log(req.body);
   let eventId = req.body.event_id;
