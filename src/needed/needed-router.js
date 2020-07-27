@@ -7,7 +7,7 @@ const neededRouter = express.Router();
 
 neededRouter.route("/").post((req, res, next) => {
   const knexInstance = req.app.get("db");
-  const eventId = req.body.event_id;
+  const { eventId } = req.body;
   NeededService.getAllNeeded(knexInstance, eventId)
     .then((items) => {
       res.json(items);
