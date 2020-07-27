@@ -12,7 +12,7 @@ neededRouter.route("/", isAuth).post((req, res, next) => {
 
   NeededService.getAllNeeded(knexInstance, eventId)
     .then((items) => {
-      res.json(items);
+      res.json({eventId: eventId});
     })
     .catch(next);
 });
