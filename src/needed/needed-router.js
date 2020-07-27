@@ -5,17 +5,20 @@ const isAuth = require("../middleware/auth");
 
 const neededRouter = express.Router();
 
-neededRouter.route("/").post((req, res, next) => {
+neededRouter.route("/", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
   const eventId = req.body.event_id;
-  console.log(eventId);
-  NeededService.getAllNeeded(knexInstance, eventId)
-    .then((items) => {})
-    .catch(next);
 
-  res.json();
-});
-neededRouter.route("/add-item").post((req, res, next) => {
+    NeededService.getAllNeeded(knexInstance, eventId)
+    .then((items) => {
+      // res.json(items)
+    })
+    
+    .catch(next);
+    // console.log(res.json(eventId))
+  res.json({message:'eventId returned successfully!'});
+  })
+neededRouter.route("/add-item", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
 
   const { id, neededItems } = req.body;
@@ -26,7 +29,7 @@ neededRouter.route("/add-item").post((req, res, next) => {
   res.json({ message: "Items added successfully" });
 });
 
-neededRouter.route("/update-item").post((req, res, next) => {
+neededRouter.route("/update-item", isAuth).post((req, res, next) => {
   const knexInstance = req.app.get("db");
   const { id, items } = req.body;
   items.forEach((item) => {
