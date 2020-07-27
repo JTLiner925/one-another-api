@@ -2335,3 +2335,64 @@
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"User with id 1 signed in.","level":"info"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unexpected token \" in JSON at position 0","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/groups","level":"error"}
+{"message":"Unauthorized request to path: /api/events","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"groups is not defined","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
