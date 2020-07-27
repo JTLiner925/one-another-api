@@ -2298,3 +2298,7 @@
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
 {"message":"Cannot set headers after they are sent to the client","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"event_id is not defined","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
