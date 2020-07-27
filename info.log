@@ -2310,3 +2310,11 @@
 {"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
 {"message":"Unauthorized request to path: /api/needed","level":"error"}
 {"message":"Undefined binding(s) detected when compiling SELECT. Undefined column(s): [event_id] query: select * from \"needed_items\" where \"event_id\" = ?","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"req.body.forEach is not a function","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Cannot read property 'forEach' of undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Cannot read property 'forEach' of undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
+{"message":"Unauthorized request to path: /api/needed","level":"error"}
