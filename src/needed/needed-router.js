@@ -5,16 +5,15 @@ const isAuth = require("../middleware/auth");
 
 const neededRouter = express.Router();
 
-
-neededRouter.route("/")
-.post((req, res, next) => {
+neededRouter.route("/").post((req, res, next) => {
   const knexInstance = req.app.get("db");
-  const { eventId } = req.body;
+  const eventId = req.body.event_id;
+  console.log(eventId);
   NeededService.getAllNeeded(knexInstance, eventId)
-    .then((items) => {
-      res.json(items);
-    })
+    .then((items) => {})
     .catch(next);
+
+  res.json();
 });
 neededRouter.route("/add-item").post((req, res, next) => {
   const knexInstance = req.app.get("db");
@@ -40,16 +39,15 @@ neededRouter.route("/update-item").post((req, res, next) => {
 });
 neededRouter.route("/needed-user").post((req, res, next) => {
   const knexInstance = req.app.get("db");
-  let userNames = {id:1}
-  req.body.forEach(id => {
-    let tempUser = {}
+  let userNames = { id: 1 };
+  req.body.forEach((id) => {
+    let tempUser = {};
     NeededService.getById(knexInstance, id)
-    .then((users) => {
-      userNames[id] = {first: users.first_name, last: users.last_name}
-    
-    })
-    .catch(next);
-  })
-  res.json(userNames)
+      .then((users) => {
+        userNames[id] = { first: users.first_name, last: users.last_name };
+      })
+      .catch(next);
+  });
+  res.json(userNames);
 });
 module.exports = neededRouter;
